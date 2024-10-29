@@ -1,4 +1,4 @@
-package com.jarvis.loans;
+package com.jarvis.cards;
 
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -10,18 +10,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-/*@ComponentScans({ @ComponentScan("com.jarvis.loans.controller") })
-@EnableJpaRepositories("com.jarvis.loans.repository")
-@EntityScan("com.jarvis.loans.model")*/
+/*@ComponentScans({ @ComponentScan("com.jarvis.cards.controller") })
+@EnableJpaRepositories("com.jarvis.cards.repository")
+@EntityScan("com.jarvis.cards.model")*/
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
 @OpenAPIDefinition(
     info = @Info(
-        title = "Loans microservice REST API Documentation",
-        description = "Banking Loans microservice REST API Documentation",
+        title = "Cards microservice REST API Documentation",
+        description = "Banking Cards microservice REST API Documentation",
         version = "v1",
         contact = @Contact(
             name = "Madan Reddy",
-            email = "tutor@gmail.com",
+            email = "tutor@jarvis.com",
             url = "https://www.jarvis.com"
         ),
         license = @License(
@@ -30,13 +30,14 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
         )
     ),
     externalDocs = @ExternalDocumentation(
-        description = "Loans microservice REST API Documentation",
+        description = "Banking Cards microservice REST API Documentation",
         url = "https://www.jarvis.com/swagger-ui.html"
     )
 )
-public class LoansApplication {
+public class CardsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LoansApplication.class, args);
+        SpringApplication.run(CardsApplication.class, args);
     }
+
 }
