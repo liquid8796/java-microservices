@@ -1,4 +1,4 @@
-package com.jarvis.rest.webservices.restful_web_services;
+package com.jarvis.rest.webservices.restful_web_services.exception;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

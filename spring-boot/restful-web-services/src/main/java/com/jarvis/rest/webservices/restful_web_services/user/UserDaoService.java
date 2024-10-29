@@ -1,4 +1,4 @@
-package com.jarvis.rest.webservices.restful_web_services;
+package com.jarvis.rest.webservices.restful_web_services.user;
 
 import org.springframework.stereotype.Component;
 

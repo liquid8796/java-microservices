@@ -1,4 +1,4 @@
-package com.jarvis.rest.webservices.restful_web_services;
+package com.jarvis.rest.webservices.restful_web_services.helloworld;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
