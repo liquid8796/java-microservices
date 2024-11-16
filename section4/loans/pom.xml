@@ -12,7 +12,8 @@
     <artifactId>loans</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>loans</name>
-    <description>loans</description>
+    <description>Microservices for Loans</description>
+    <packaging>jar</packaging>
     <url/>
     <licenses>
         <license/>
@@ -89,6 +90,17 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <name>liquid8796/${project.artifactId}:s4</name>
+                    </image>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
