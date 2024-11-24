@@ -60,7 +60,7 @@ services:
       service: microservice-base-config
 
   accounts:
-    image: liquid8796/accounts:s6
+    image: eazybytes/accounts:s6
     container_name: accounts-ms
     ports:
       - "8080:8080"
