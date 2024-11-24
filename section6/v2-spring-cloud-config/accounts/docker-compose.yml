@@ -32,6 +32,14 @@ services:
           memory: 700m
     networks:
       - jarvis
+  rabbitmq:
+    image: rabbitmq
+    command: rabbitmq-server
+    expose:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - jarvis
 networks:
   jarvis:
     driver: "bridge"
