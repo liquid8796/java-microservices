@@ -1,1 +1,1 @@
-hookdeck listen [port] Source
+hookdeck listen 8071 Source --cli-path /monitor
