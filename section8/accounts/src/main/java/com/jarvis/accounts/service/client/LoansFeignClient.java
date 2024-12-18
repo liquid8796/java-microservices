@@ -1,6 +1,5 @@
 package com.jarvis.accounts.service.client;
 
-import com.jarvis.accounts.dto.CardsDto;
 import com.jarvis.accounts.dto.LoansDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
