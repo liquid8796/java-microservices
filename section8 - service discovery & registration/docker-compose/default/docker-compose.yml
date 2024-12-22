@@ -23,7 +23,7 @@ services:
       start_period: 10s
 
   configserver:
-    image: eazybytes/configserver:s8
+    image: liquid8796/configserver:s8
     container_name: configserver-ms
     ports:
       - "8071:8071"
