@@ -1,14 +1,14 @@
 services:
   mysql:
-    image: mysql:8
+    image: mysql
     hostname: mysqlserver
     ports:
       - "3306:3306"
     environment:
       MYSQL_DATABASE: banking
-      MYSQL_USER: user
-      MYSQL_PASSWORD: dummypassword
-      MYSQL_ROOT_PASSWORD: dummypassword
+      MYSQL_USER: jarvis
+      MYSQL_PASSWORD: Password@123
+      MYSQL_ROOT_PASSWORD: Password@123
     volumes:
       - ../db-init/mysql/schema.sql:/docker-entrypoint-initdb.d/1.sql
       - ../db-init/mysql/data.sql:/docker-entrypoint-initdb.d/2.sql
@@ -23,7 +23,7 @@ services:
       start_period: 10s
 
   configserver:
-    image: liquid8796/configserver:s8
+    image: eazybytes/configserver:s8
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -40,28 +40,8 @@ services:
       file: common-config.yml
       service: microservice-base-config
 
-#  eurekaserver:
-#    image: liquid8796/eurekaserver:s8
-#    container_name: eurekaserver-ms
-#    ports:
-#      - "8070:8070"
-#    healthcheck:
-#      test: "curl --fail --silent localhost:8070/actuator/health/readiness | grep UP || exit 1"
-#      interval: 10s
-#      timeout: 5s
-#      retries: 10
-#      start_period: 10s
-#    extends:
-#      file: common-config.yml
-#      service: microservice-configserver-config
-#    depends_on:
-#      configserver:
-#        condition: service_healthy
-#    environment:
-#      SPRING_APPLICATION_NAME: "eurekaserver"
-
   eurekaserver:
-    image: "liquid8796/eurekaserver:s8"
+    image: "eazybytes/eurekaserver:s8"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -77,11 +57,11 @@ services:
     extends:
       file: common-config.yml
       service: microservice-configserver-config
-    environment:
-      SPRING_APPLICATION_NAME: "eurekaserver"
+#    environment:
+#      SPRING_APPLICATION_NAME: "eurekaserver"
 
   accounts:
-    image: liquid8796/accounts:s8
+    image: eazybytes/accounts:s8
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -90,14 +70,14 @@ services:
         condition: service_healthy
       eurekaserver:
         condition: service_healthy
-    environment:
-      SPRING_APPLICATION_NAME: "accounts"
+#    environment:
+#      SPRING_APPLICATION_NAME: "accounts"
     extends:
       file: common-config.yml
       service: microservice-eureka-config
 
   loans:
-    image: liquid8796/loans:s8
+    image: eazybytes/loans:s8
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -106,14 +86,14 @@ services:
         condition: service_healthy
       eurekaserver:
         condition: service_healthy
-    environment:
-      SPRING_APPLICATION_NAME: "loans"
+#    environment:
+#      SPRING_APPLICATION_NAME: "loans"
     extends:
       file: common-config.yml
       service: microservice-eureka-config
 
   cards:
-    image: liquid8796/cards:s8
+    image: eazybytes/cards:s8
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -122,8 +102,8 @@ services:
         condition: service_healthy
       eurekaserver:
         condition: service_healthy
-    environment:
-      SPRING_APPLICATION_NAME: "cards"
+#    environment:
+#      SPRING_APPLICATION_NAME: "cards"
     extends:
       file: common-config.yml
       service: microservice-eureka-config
