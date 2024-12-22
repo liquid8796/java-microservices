@@ -41,7 +41,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: "eazybytes/eurekaserver:s8"
+    image: "liquid8796/eurekaserver:s8"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -57,11 +57,11 @@ services:
     extends:
       file: common-config.yml
       service: microservice-configserver-config
-#    environment:
-#      SPRING_APPLICATION_NAME: "eurekaserver"
+    environment:
+      SPRING_APPLICATION_NAME: "eurekaserver"
 
   accounts:
-    image: eazybytes/accounts:s8
+    image: liquid8796/accounts:s8
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -70,14 +70,14 @@ services:
         condition: service_healthy
       eurekaserver:
         condition: service_healthy
-#    environment:
-#      SPRING_APPLICATION_NAME: "accounts"
+    environment:
+      SPRING_APPLICATION_NAME: "accounts"
     extends:
       file: common-config.yml
       service: microservice-eureka-config
 
   loans:
-    image: eazybytes/loans:s8
+    image: liquid8796/loans:s8
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -86,14 +86,14 @@ services:
         condition: service_healthy
       eurekaserver:
         condition: service_healthy
-#    environment:
-#      SPRING_APPLICATION_NAME: "loans"
+    environment:
+      SPRING_APPLICATION_NAME: "loans"
     extends:
       file: common-config.yml
       service: microservice-eureka-config
 
   cards:
-    image: eazybytes/cards:s8
+    image: liquid8796/cards:s8
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -102,8 +102,8 @@ services:
         condition: service_healthy
       eurekaserver:
         condition: service_healthy
-#    environment:
-#      SPRING_APPLICATION_NAME: "cards"
+    environment:
+      SPRING_APPLICATION_NAME: "cards"
     extends:
       file: common-config.yml
       service: microservice-eureka-config
