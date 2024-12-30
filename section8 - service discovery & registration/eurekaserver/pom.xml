@@ -68,6 +68,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>liquid8796/${project.artifactId}:s8</name>
+					</image>
+				</configuration>
 			</plugin>
 
 			<plugin>
