@@ -20,15 +20,18 @@ public class GatewayserverApplication {
 		return routeLocatorBuilder.routes()
 				.route(p -> p
 						.path("/jarvis/accounts/**")
-						.filters( f -> f.rewritePath("/jarvis/accounts/(?<segment>.*)","/${segment}"))
+						.filters( f -> f.rewritePath("/jarvis/accounts/(?<segment>.*)","/${segment}")
+							.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 						.uri("lb://ACCOUNTS"))
 				.route(p -> p
 						.path("/jarvis/loans/**")
-						.filters( f -> f.rewritePath("/jarvis/loans/(?<segment>.*)","/${segment}"))
+						.filters( f -> f.rewritePath("/jarvis/loans/(?<segment>.*)","/${segment}")
+							.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 						.uri("lb://LOANS"))
 				.route(p -> p
 						.path("/jarvis/cards/**")
-						.filters( f -> f.rewritePath("/jarvis/cards/(?<segment>.*)","/${segment}"))
+						.filters( f -> f.rewritePath("/jarvis/cards/(?<segment>.*)","/${segment}")
+							.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 						.uri("lb://CARDS")).build();
 	}
 }
