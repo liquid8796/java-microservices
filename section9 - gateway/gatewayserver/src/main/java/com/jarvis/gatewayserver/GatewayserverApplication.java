@@ -19,18 +19,18 @@ public class GatewayserverApplication {
 	public RouteLocator jarvisBankRouteConfig(RouteLocatorBuilder routeLocatorBuilder) {
 		return routeLocatorBuilder.routes()
 				.route(p -> p
-						.path("/jarvis/accounts/**")
-						.filters( f -> f.rewritePath("/jarvis/accounts/(?<segment>.*)","/${segment}")
+						.path("/jarvisbank/accounts/**")
+						.filters( f -> f.rewritePath("/jarvisbank/accounts/(?<segment>.*)","/${segment}")
 							.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 						.uri("lb://ACCOUNTS"))
 				.route(p -> p
-						.path("/jarvis/loans/**")
-						.filters( f -> f.rewritePath("/jarvis/loans/(?<segment>.*)","/${segment}")
+						.path("/jarvisbank/loans/**")
+						.filters( f -> f.rewritePath("/jarvisbank/loans/(?<segment>.*)","/${segment}")
 							.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 						.uri("lb://LOANS"))
 				.route(p -> p
-						.path("/jarvis/cards/**")
-						.filters( f -> f.rewritePath("/jarvis/cards/(?<segment>.*)","/${segment}")
+						.path("/jarvisbank/cards/**")
+						.filters( f -> f.rewritePath("/jarvisbank/cards/(?<segment>.*)","/${segment}")
 							.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 						.uri("lb://CARDS")).build();
 	}
