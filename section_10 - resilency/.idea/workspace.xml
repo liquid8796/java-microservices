@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="df62541e-0c02-4c93-97ff-93393f238d21" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/jarvis/accounts/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/jarvis/accounts/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+>>>>>>> 0216ce7f6cb13bedac51cab38c1a9cd75cdfb30b
       <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/jarvis/gatewayserver/filters/ResponseTraceFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/jarvis/gatewayserver/filters/ResponseTraceFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,9 +170,13 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.GatewayserverApplication" />
+<<<<<<< HEAD
         <item itemvalue="Spring Boot.LoansApplication" />
+=======
+>>>>>>> 0216ce7f6cb13bedac51cab38c1a9cd75cdfb30b
         <item itemvalue="Spring Boot.AccountsApplication" />
         <item itemvalue="Spring Boot.CardsApplication" />
+        <item itemvalue="Spring Boot.LoansApplication" />
         <item itemvalue="Spring Boot.EurekaserverApplication" />
       </list>
     </recent_temporary>
@@ -196,7 +205,11 @@
       <workItem from="1739716569009" duration="1545000" />
       <workItem from="1739804821281" duration="5138000" />
       <workItem from="1739885871321" duration="1878000" />
+<<<<<<< HEAD
       <workItem from="1740069274500" duration="1204000" />
+=======
+      <workItem from="1740069274500" duration="945000" />
+>>>>>>> 0216ce7f6cb13bedac51cab38c1a9cd75cdfb30b
     </task>
     <servers />
   </component>
