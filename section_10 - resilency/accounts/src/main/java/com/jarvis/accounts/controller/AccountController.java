@@ -196,7 +196,7 @@ public class AccountController {
 
     @Retry(name = "getBuildInfo",fallbackMethod = "getBuildInfoFallback")
     @GetMapping("/build-info")
-    public ResponseEntity<String> getBuildInfo() throws TimeoutException {
+    public ResponseEntity<String> getBuildInfo() {
         logger.debug("getBuildInfo() method Invoked");
 
         return ResponseEntity
