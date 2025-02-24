@@ -119,10 +119,10 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>3.4.2</version>
+                <version>3.4.4</version>
                 <configuration>
                     <to>
-                        <image>liquid8796/${project.artifactId}:s9</image>
+                        <image>liquid8796/${project.artifactId}:s10</image>
                     </to>
                 </configuration>
             </plugin>
