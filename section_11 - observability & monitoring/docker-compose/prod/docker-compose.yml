@@ -120,15 +120,16 @@ services:
   backend:
     image: grafana/loki:latest
     volumes:
-      - ./loki-config.yaml:/etc/loki/config.yaml
+      - ../observability/loki/loki-config.yaml:/etc/loki/config.yaml
     ports:
       - "3100"
       - "7946"
     command: "-config.file=/etc/loki/config.yaml -target=backend -legacy-read-mode=false"
     depends_on:
       - gateway
-    networks:
-      - loki
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
 
   gateway:
     image: nginx:latest
@@ -196,8 +197,9 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    networks:
-      - loki
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
 
   configserver:
     image: "liquid8796/configserver:s11"
