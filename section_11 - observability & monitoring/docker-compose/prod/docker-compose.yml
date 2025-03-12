@@ -200,7 +200,7 @@ services:
       - loki
 
   configserver:
-    image: "liquid8796/configserver:s10"
+    image: "liquid8796/configserver:s11"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -215,7 +215,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: "liquid8796/eurekaserver:s10"
+    image: "liquid8796/eurekaserver:s11"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -235,7 +235,7 @@ services:
       SPRING_APPLICATION_NAME: "eurekaserver"
 
   accounts:
-    image: "liquid8796/accounts:s10"
+    image: "liquid8796/accounts:s11"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -257,7 +257,7 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "liquid8796/loans:s10"
+    image: "liquid8796/loans:s11"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -279,7 +279,7 @@ services:
       service: microservice-eureka-config
 
   cards:
-    image: "liquid8796/cards:s10"
+    image: "liquid8796/cards:s11"
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -301,7 +301,7 @@ services:
       service: microservice-eureka-config
 
   gatewayserver:
-    image: "liquid8796/gatewayserver:s10"
+    image: "liquid8796/gatewayserver:s11"
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"
