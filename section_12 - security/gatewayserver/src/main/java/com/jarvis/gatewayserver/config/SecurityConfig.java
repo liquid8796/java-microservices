@@ -15,9 +15,9 @@ public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
         serverHttpSecurity.authorizeExchange(exchanges -> exchanges.pathMatchers(HttpMethod.GET).permitAll()
-                .pathMatchers("/jarvis/accounts/**").authenticated()
-                .pathMatchers("/jarvis/cards/**").authenticated()
-                .pathMatchers("/jarvis/loans/**").authenticated())
+                .pathMatchers("/jarvis/accounts/**").hasRole("ACCOUNTS")
+                .pathMatchers("/jarvis/cards/**").hasRole("CARDS")
+                .pathMatchers("/jarvis/loans/**").hasRole("LOANS"))
                 .oauth2ResourceServer(oAuth2ResourceServerSpec -> oAuth2ResourceServerSpec
                         .jwt(Customizer.withDefaults())
         );
