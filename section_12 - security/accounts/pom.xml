@@ -142,7 +142,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name>liquid8796/${project.artifactId}:s11</name>
+						<name>liquid8796/${project.artifactId}:s12</name>
 					</image>
 				</configuration>
 			</plugin>
@@ -153,7 +153,7 @@
 				<version>3.4.4</version>
 				<configuration>
 					<to>
-						<image>liquid8796/${project.artifactId}:s11</image>
+						<image>liquid8796/${project.artifactId}:s12</image>
 						<auth>
 							<username>liquid8796</username>
 							<password>Qwerty8796@</password>
