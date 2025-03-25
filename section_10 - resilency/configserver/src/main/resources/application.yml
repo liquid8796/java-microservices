@@ -12,7 +12,7 @@ spring:
         # search-locations: "file:///Users//eazybytes//Documents//config"
         git:
           uri: "https://github.com/liquid8796/microservices_config.git"
-          default-label: main
+          default-label: master
           timeout: 5
           clone-on-start: true
           force-pull: true
