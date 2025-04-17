@@ -168,12 +168,6 @@ public class AccountController {
         }
     }
 
-    @GetMapping("/test")
-    public String test(@RequestParam String type) {
-        iAccountsService.test(type);
-        return "success";
-    }
-
     @Operation(
         summary = "Get Build information",
         description = "Get Build information that is deployed into accounts microservice"

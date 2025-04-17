@@ -2,6 +2,7 @@ package com.jarvis.accounts.service.impl;
 
 import com.jarvis.accounts.constants.AccountsConstants;
 import com.jarvis.accounts.dto.AccountsDto;
+import com.jarvis.accounts.dto.AccountsMsgDto;
 import com.jarvis.accounts.dto.CustomerDto;
 import com.jarvis.accounts.entity.Accounts;
 import com.jarvis.accounts.entity.Customer;
@@ -12,30 +13,24 @@ import com.jarvis.accounts.mapper.CustomerMapper;
 import com.jarvis.accounts.repository.AccountsRepository;
 import com.jarvis.accounts.repository.CustomerRepository;
 import com.jarvis.accounts.service.IAccountsService;
-import com.jarvis.accounts.service.ITestService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
-import java.util.concurrent.CountDownLatch;
 
 @Service
 @AllArgsConstructor
 public class AccountsServiceImpl implements IAccountsService {
-    @Autowired
+
+    private static final Logger log = LoggerFactory.getLogger(AccountsServiceImpl.class);
+
     private AccountsRepository accountsRepository;
-
-    @Autowired
     private CustomerRepository customerRepository;
-
-    @Autowired
-    private ITestService iTestService;
+    private final StreamBridge streamBridge;
 
     /**
      *
@@ -50,7 +45,7 @@ public class AccountsServiceImpl implements IAccountsService {
             throw new CustomerAlreadyExistsException("Customer already registered with given mobileNumber " + customerDto.getMobileNumber());
         }
         Customer savedCustomer = customerRepository.save(customer);
-        accountsRepository.save(createNewAccount(savedCustomer));
+        Accounts savedAccount = accountsRepository.save(createNewAccount(savedCustomer));
     }
 
     /**
@@ -66,6 +61,14 @@ public class AccountsServiceImpl implements IAccountsService {
         newAccount.setAccountType(AccountsConstants.SAVINGS);
         newAccount.setBranchAddress(AccountsConstants.ADDRESS);
         return newAccount;
+    }
+
+    private void sendCommunication(Accounts account, Customer customer) {
+        var accountsMsgDto = new AccountsMsgDto(account.getAccountNumber(), customer.getName(),
+                customer.getEmail(), customer.getMobileNumber());
+        log.info("Sending Communication request for the details: {}", accountsMsgDto);
+        var result = streamBridge.send("sendCommunication-out-0", accountsMsgDto);
+        log.info("Is the Communication request successfully triggered ? : {}", result);
     }
 
     /**
@@ -117,31 +120,6 @@ public class AccountsServiceImpl implements IAccountsService {
         accountsRepository.deleteByCustomerId(customer.getCustomerId());
         customerRepository.deleteById(customer.getCustomerId());
         return true;
-    }
-
-    @Override
-    @Transactional
-    public void test(String type) {
-        Accounts acc1 = new Accounts();
-        long randomAccNumber = 1000000000L + new Random().nextInt(900000000);
-        acc1.setAccountNumber(randomAccNumber);
-        acc1.setAccountType(AccountsConstants.SAVINGS);
-        acc1.setBranchAddress("HCM");
-        iTestService.createArbitraryAccount(acc1, false);
-
-        Accounts acc2 = new Accounts();
-        randomAccNumber = 1000000000L + new Random().nextInt(900000000);
-        acc2.setAccountNumber(randomAccNumber);
-        acc2.setAccountType("Checkings");
-        acc2.setBranchAddress("Binh Duong");
-        iTestService.createArbitraryAccount(acc2, false);
-
-        Accounts acc3 = new Accounts();
-        randomAccNumber = 1000000000L + new Random().nextInt(900000000);
-        acc3.setAccountNumber(randomAccNumber);
-        acc3.setAccountType("Checkings");
-        acc3.setBranchAddress("Ha Noi");
-        iTestService.createArbitraryAccount(acc3, false);
     }
 
     private void updateArbitraryAccount(long accountNumber, String type, boolean isThrow) {
