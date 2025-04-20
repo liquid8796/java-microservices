@@ -46,6 +46,15 @@ public class AccountsServiceImpl implements IAccountsService {
         }
         Customer savedCustomer = customerRepository.save(customer);
         Accounts savedAccount = accountsRepository.save(createNewAccount(savedCustomer));
+        sendCommunication(savedAccount, savedCustomer);
+    }
+
+    private void sendCommunication(Accounts account, Customer customer) {
+        var accountsMsgDto = new AccountsMsgDto(account.getAccountNumber(), customer.getName(),
+                customer.getEmail(), customer.getMobileNumber());
+        log.info("Sending Communication request for the details: {}", accountsMsgDto);
+        var result = streamBridge.send("sendCommunication-out-0", accountsMsgDto);
+        log.info("Is the Communication request successfully triggered ? : {}", result);
     }
 
     /**
@@ -61,14 +70,6 @@ public class AccountsServiceImpl implements IAccountsService {
         newAccount.setAccountType(AccountsConstants.SAVINGS);
         newAccount.setBranchAddress(AccountsConstants.ADDRESS);
         return newAccount;
-    }
-
-    private void sendCommunication(Accounts account, Customer customer) {
-        var accountsMsgDto = new AccountsMsgDto(account.getAccountNumber(), customer.getName(),
-                customer.getEmail(), customer.getMobileNumber());
-        log.info("Sending Communication request for the details: {}", accountsMsgDto);
-        var result = streamBridge.send("sendCommunication-out-0", accountsMsgDto);
-        log.info("Is the Communication request successfully triggered ? : {}", result);
     }
 
     /**
