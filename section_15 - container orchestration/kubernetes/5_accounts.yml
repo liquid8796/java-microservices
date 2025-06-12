@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: accounts
-        image: liquid8796/accounts:s12
+        image: liquid8796/accounts:s14
         ports:
         - containerPort: 8080
         env:
