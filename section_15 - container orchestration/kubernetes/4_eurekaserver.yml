@@ -23,12 +23,12 @@ spec:
         - name: SPRING_APPLICATION_NAME
           valueFrom:
             configMapKeyRef:
-              name: eazybank-configmap
+              name: jarvis-configmap
               key: EUREKA_APPLICATION_NAME
         - name: SPRING_CONFIG_IMPORT
           valueFrom: 
             configMapKeyRef:
-              name: eazybank-configmap
+              name: jarvis-configmap
               key: SPRING_CONFIG_IMPORT
 ---
 apiVersion: v1

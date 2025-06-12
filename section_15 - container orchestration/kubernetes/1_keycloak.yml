@@ -22,12 +22,12 @@ spec:
           - name: KEYCLOAK_ADMIN
             valueFrom:
               configMapKeyRef:
-                name: eazybank-configmap
+                name: jarvis-configmap
                 key: KEYCLOAK_ADMIN
           - name: KEYCLOAK_ADMIN_PASSWORD
             valueFrom:
               configMapKeyRef:
-                name: eazybank-configmap
+                name: jarvis-configmap
                 key: KEYCLOAK_ADMIN_PASSWORD
           ports:
             - name: http
