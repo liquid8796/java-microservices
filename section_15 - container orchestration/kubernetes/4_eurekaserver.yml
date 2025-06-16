@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: eurekaserver
-        image: liquid8796/eurekaserver:s14
+        image: liquid8796/eurekaserver:s12
         ports:
         - containerPort: 8070
         env:

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: loans
-        image: liquid8796/loans:s14
+        image: liquid8796/loans:s12
         ports:
         - containerPort: 8090
         env:
