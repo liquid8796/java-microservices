@@ -48,7 +48,7 @@ metadata:
 spec:
   selector:
     app: accounts
-  type: NodePort
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 8080
