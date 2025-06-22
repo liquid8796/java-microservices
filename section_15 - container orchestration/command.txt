@@ -1,0 +1,1 @@
+kubectl delete svc kubernetes-dashboard-kong-proxy -n kubernetes-dashboard
