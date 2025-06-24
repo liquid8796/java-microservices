@@ -9,7 +9,7 @@ appName: accounts
 replicaCount: 1
 
 image:
-  repository: eazybytes/accounts
+  repository: jarvis/accounts
   tag: s14
 
 containerPort: 8080
