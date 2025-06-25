@@ -2,14 +2,14 @@
 # Declare variables to be passed into your templates.
 
 deploymentName: cards-deployment
-serviceName: accounts
-appLabel: accounts
-appName: accounts
+serviceName: cards
+appLabel: cards
+appName: cards
 
 replicaCount: 1
 
 image:
-  repository: liquid8796/accounts
+  repository: liquid8796/cards
   tag: s14
 
 containerPort: 8080
