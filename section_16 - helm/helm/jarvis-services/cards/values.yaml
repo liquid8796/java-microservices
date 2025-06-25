@@ -1,15 +1,15 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-deploymentName: cards-deployment
-serviceName: cards
-appLabel: cards
-appName: cards
+deploymentName: configserver-deployment
+serviceName: configserver
+appLabel: configserver
+appName: configserver
 
 replicaCount: 1
 
 image:
-  repository: liquid8796/cards
+  repository: liquid8796/configserver
   tag: s14
 
 containerPort: 9000
