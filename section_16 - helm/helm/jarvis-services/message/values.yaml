@@ -1,15 +1,15 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-deploymentName: loans-deployment
-serviceName: loans
-appLabel: loans
-appName: loans
+deploymentName: message-deployment
+serviceName: message
+appLabel: message
+appName: message
 
 replicaCount: 1
 
 image:
-  repository: liquid8796/loans
+  repository: liquid8796/message
   tag: s14
 
 containerPort: 8090
