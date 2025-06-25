@@ -9,7 +9,7 @@ appName: cards
 replicaCount: 1
 
 image:
-  repository: liquid8796/cards
+  repository: eazybytes/cards
   tag: s14
 
 containerPort: 9000
