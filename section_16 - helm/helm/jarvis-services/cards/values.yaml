@@ -12,12 +12,12 @@ image:
   repository: liquid8796/configserver
   tag: s14
 
-containerPort: 9000
+containerPort: 8071
 
 service:
   type: ClusterIP
-  port: 9000
-  targetPort: 9000
+  port: 8071
+  targetPort: 8071
 
 appname_enabled: true
 profile_enabled: true
