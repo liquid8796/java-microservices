@@ -26,32 +26,32 @@ appVersion: "1.0.0"
 dependencies:
   - name: jarvis-common
     version: 0.1.0
-    repository: file://../../eazybank-common
+    repository: file://../../jarvis-common
 
   - name: configserver
     version: 0.1.0
-    repository: file://../../eazybank-services/configserver
+    repository: file://../../jarvis-services/configserver
     
   - name: eurekaserver
     version: 0.1.0
-    repository: file://../../eazybank-services/eurekaserver
+    repository: file://../../jarvis-services/eurekaserver
   
   - name: accounts
     version: 0.1.0
-    repository: file://../../eazybank-services/accounts
+    repository: file://../../jarvis-services/accounts
     
   - name: cards
     version: 0.1.0
-    repository: file://../../eazybank-services/cards
+    repository: file://../../jarvis-services/cards
     
   - name: loans
     version: 0.1.0
-    repository: file://../../eazybank-services/loans
+    repository: file://../../jarvis-services/loans
 
   - name: gatewayserver
     version: 0.1.0
-    repository: file://../../eazybank-services/gatewayserver
+    repository: file://../../jarvis-services/gatewayserver
 
   - name: message
     version: 0.1.0
-    repository: file://../../eazybank-services/message
+    repository: file://../../jarvis-services/message
