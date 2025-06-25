@@ -9,20 +9,20 @@ appName: loans
 replicaCount: 1
 
 image:
-  repository: liquid8796/gatewayserver
+  repository: liquid8796/loans
   tag: s14
 
-containerPort: 8072
+containerPort: 8090
 
 service:
-  type: LoadBalancer
-  port: 8072
-  targetPort: 8072
+  type: ClusterIP
+  port: 8090
+  targetPort: 8090
 
 appname_enabled: true
 profile_enabled: true
 config_enabled: true
 eureka_enabled: true
-resouceserver_enabled: true
+resouceserver_enabled: false
 otel_enabled: true
 kafka_enabled: false
