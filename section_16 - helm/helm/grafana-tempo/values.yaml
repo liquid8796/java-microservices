@@ -1465,7 +1465,7 @@ ingester:
   ## @param ingester.livenessProbe.successThreshold Success threshold for livenessProbe
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     failureThreshold: 3
     initialDelaySeconds: 10
     periodSeconds: 10
@@ -1479,7 +1479,7 @@ ingester:
   ## @param ingester.readinessProbe.successThreshold Success threshold for readinessProbe
   ##
   readinessProbe:
-    enabled: true
+    enabled: false
     failureThreshold: 3
     initialDelaySeconds: 10
     periodSeconds: 10
