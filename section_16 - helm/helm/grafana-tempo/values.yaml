@@ -2848,7 +2848,7 @@ vulture:
   ## @param vulture.readinessProbe.successThreshold Success threshold for readinessProbe
   ##
   readinessProbe:
-    enabled: true
+    enabled: false
     failureThreshold: 3
     initialDelaySeconds: 10
     periodSeconds: 10
