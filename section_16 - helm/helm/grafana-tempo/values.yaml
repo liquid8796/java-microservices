@@ -306,7 +306,7 @@ compactor:
   ## @param compactor.livenessProbe.successThreshold Success threshold for livenessProbe
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     failureThreshold: 3
     initialDelaySeconds: 80
     periodSeconds: 10
@@ -678,7 +678,7 @@ distributor:
   ## @param distributor.livenessProbe.successThreshold Success threshold for livenessProbe
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     failureThreshold: 3
     initialDelaySeconds: 10
     periodSeconds: 10
@@ -1054,7 +1054,7 @@ metricsGenerator:
   ## @param metricsGenerator.livenessProbe.successThreshold Success threshold for livenessProbe
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     failureThreshold: 3
     initialDelaySeconds: 10
     periodSeconds: 10
@@ -1881,7 +1881,7 @@ querier:
   ## @param querier.livenessProbe.successThreshold Success threshold for livenessProbe
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     failureThreshold: 3
     initialDelaySeconds: 10
     periodSeconds: 10
@@ -2255,7 +2255,7 @@ queryFrontend:
   ## @param queryFrontend.livenessProbe.successThreshold Success threshold for livenessProbe
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     failureThreshold: 3
     initialDelaySeconds: 10
     periodSeconds: 10
@@ -2834,7 +2834,7 @@ vulture:
   ## @param vulture.livenessProbe.successThreshold Success threshold for livenessProbe
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     failureThreshold: 3
     initialDelaySeconds: 10
     periodSeconds: 10
