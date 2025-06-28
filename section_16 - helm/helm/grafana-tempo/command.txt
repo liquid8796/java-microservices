@@ -1,1 +1,0 @@
-kubectl delete pvc data-tempo-grafana-tempo-ingester-0
