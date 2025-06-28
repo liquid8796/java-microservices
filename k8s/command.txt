@@ -1,2 +1,2 @@
 kubectl delete svc kubernetes-dashboard-kong-proxy -n kubernetes-dashboard
-kubectl apply -f .\k8s_daskboard_svc.yaml
+kubectl apply -n kubernetes-dashboard -f .\k8s_daskboard_svc.yaml
