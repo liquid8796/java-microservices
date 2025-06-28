@@ -10,7 +10,7 @@ replicaCount: 1
 
 image:
   repository: liquid8796/gatewayserver
-  tag: s12
+  tag: s14
 
 containerPort: 8072
 
