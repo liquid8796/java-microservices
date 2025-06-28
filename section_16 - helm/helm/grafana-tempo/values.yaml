@@ -320,7 +320,7 @@ compactor:
   ## @param compactor.readinessProbe.successThreshold Success threshold for readinessProbe
   ##
   readinessProbe:
-    enabled: true
+    enabled: false
     failureThreshold: 3
     initialDelaySeconds: 80
     periodSeconds: 10
@@ -692,7 +692,7 @@ distributor:
   ## @param distributor.readinessProbe.successThreshold Success threshold for readinessProbe
   ##
   readinessProbe:
-    enabled: true
+    enabled: false
     failureThreshold: 3
     initialDelaySeconds: 10
     periodSeconds: 10
