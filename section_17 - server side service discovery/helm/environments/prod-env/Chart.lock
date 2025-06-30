@@ -1,0 +1,24 @@
+dependencies:
+- name: jarvis-common
+  repository: file://../../jarvis-common
+  version: 0.1.0
+- name: configserver
+  repository: file://../../jarvis-services/configserver
+  version: 0.1.0
+- name: accounts
+  repository: file://../../jarvis-services/accounts
+  version: 0.1.0
+- name: cards
+  repository: file://../../jarvis-services/cards
+  version: 0.1.0
+- name: loans
+  repository: file://../../jarvis-services/loans
+  version: 0.1.0
+- name: gatewayserver
+  repository: file://../../jarvis-services/gatewayserver
+  version: 0.1.0
+- name: message
+  repository: file://../../jarvis-services/message
+  version: 0.1.0
+digest: sha256:07614735ad223f3d001f33da9041258ad4ce3fb56874403394f2c81d4e1203de
+generated: "2025-06-30T17:01:46.487592+07:00"
