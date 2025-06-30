@@ -1,0 +1,27 @@
+dependencies:
+- name: jarvis-common
+  repository: file://../../jarvis-common
+  version: 0.1.0
+- name: configserver
+  repository: file://../../jarvis-services/configserver
+  version: 0.1.0
+- name: eurekaserver
+  repository: file://../../jarvis-services/eurekaserver
+  version: 0.1.0
+- name: accounts
+  repository: file://../../jarvis-services/accounts
+  version: 0.1.0
+- name: cards
+  repository: file://../../jarvis-services/cards
+  version: 0.1.0
+- name: loans
+  repository: file://../../jarvis-services/loans
+  version: 0.1.0
+- name: gatewayserver
+  repository: file://../../jarvis-services/gatewayserver
+  version: 0.1.0
+- name: message
+  repository: file://../../jarvis-services/message
+  version: 0.1.0
+digest: sha256:a5dc8f0e203dd02e881dfa6edf36bee95b5e1cc953dacaa81b11af0ac3e4dae4
+generated: "2025-06-29T09:50:10.4294559+07:00"
