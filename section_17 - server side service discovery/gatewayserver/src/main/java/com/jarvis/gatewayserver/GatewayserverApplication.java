@@ -44,14 +44,14 @@ public class GatewayserverApplication {
 							.retry(retryConfig -> retryConfig.setRetries(3)
 									.setMethods(HttpMethod.GET)
 									.setBackoff(Duration.ofMillis(100), Duration.ofMillis(1000), 2, true)))
-						.uri("lb://LOANS"))
+						.uri("http://loans:8090"))
 				.route(p -> p
 						.path("/jarvis/cards/**")
 						.filters( f -> f.rewritePath("/jarvis/cards/(?<segment>.*)","/${segment}")
 							.addResponseHeader("X-Response-Time", LocalDateTime.now().toString())
 								.requestRateLimiter(config -> config.setRateLimiter(redisRateLimiter())
 										.setKeyResolver(userKeyResolver())))
-						.uri("lb://CARDS")).build();
+						.uri("http://cards:9000")).build();
 	}
 
 	@Bean
