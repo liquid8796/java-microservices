@@ -1,1 +1,0 @@
-helm list --short | ForEach-Object { helm uninstall $_ }
