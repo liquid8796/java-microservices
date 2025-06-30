@@ -1,2 +1,4 @@
 kubectl delete svc kubernetes-dashboard-kong-proxy -n kubernetes-dashboard
 kubectl apply -n kubernetes-dashboard -f .\k8s_daskboard_svc.yaml
+
+helm list --short | ForEach-Object { helm uninstall $_ }
