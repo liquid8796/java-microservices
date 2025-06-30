@@ -10,7 +10,7 @@ replicaCount: 1
 
 image:
   repository: liquid8796/accounts
-  tag: s14
+  tag: s17
 
 containerPort: 8080
 
